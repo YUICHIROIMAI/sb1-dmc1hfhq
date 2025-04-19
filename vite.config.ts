@@ -7,21 +7,16 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 5173,
     strictPort: true,
-    hmr: {
-      clientPort: 443,
-      timeout: 60000
-    },
-    https: false,
     cors: true,
     watch: {
       usePolling: true,
-      interval: 1000
-    }
+      interval: 1000,
+    },
   },
   preview: {
     host: '0.0.0.0',
     port: 4173,
-    strictPort: true
+    strictPort: true,
   },
   build: {
     sourcemap: true,
@@ -30,10 +25,10 @@ export default defineConfig({
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'chart-vendor': ['recharts'],
-          'utils-vendor': ['date-fns', 'zod']
-        }
-      }
-    }
+          'utils-vendor': ['date-fns', 'zod'],
+        },
+      },
+    },
   },
   optimizeDeps: {
     include: [
@@ -43,11 +38,11 @@ export default defineConfig({
       '@supabase/supabase-js',
       'lucide-react',
       'date-fns',
-      'zod'
+      'zod',
     ],
-    exclude: []
+    exclude: [],
   },
   resolve: {
-    dedupe: ['react', 'react-dom']
-  }
+    dedupe: ['react', 'react-dom'],
+  },
 });

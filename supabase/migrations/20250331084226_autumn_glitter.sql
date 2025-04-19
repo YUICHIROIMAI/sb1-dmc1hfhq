@@ -45,6 +45,8 @@ SELECT id
 FROM profiles
 WHERE is_admin = true;
 
+CREATE UNIQUE INDEX IF NOT EXISTS admin_users_id_idx ON admin_users (id);
+
 REFRESH MATERIALIZED VIEW admin_users;
 
 -- Create function to refresh admin users view
